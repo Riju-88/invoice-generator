@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <!-- html2pdf CDN link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="main-cont">
+        <h2 id="title">Invoice Generator</h2>
+        <p id="source">Source Code of this tool is available on <a href="">GitHub</a></p>
+        <button id="hide">Hide</button>
+        <div id="bill-cont">
+            <div id="bill-pad" class="bill-pad-bg">
+                <table id="bill">
+                    <thead>
+                        <tr></tr>
+                        <tr id="logo-cont">
+                            <td id="company-info">
+                                <input type="text" placeholder="Company Name" id="company">
+
+                                <pre id="address" contenteditable="true" class="blur-text"></pre>
+
+                            </td>
+                            <td><img id="logo" src="#" alt="Logo"></td>
+                        </tr>
+                        <tr>
+                            <td id="customer-info">
+                                <strong>Billed to:</strong>
+                                <input type="text" placeholder="Customer Name">
+                                <input type="tel" id="phone" placeholder="phone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Item</th>
+                            <th>price</th>
+                        </tr>
+
+                    </thead>
+                    <!--  -->
+                    <!-- <tr>
+                        <td><input type="text" class="item" placeholder="item" value="Bread"></td>
+                        <td><input type="number" class="price" placeholder="price" value="99"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="item" value="Bread" placeholder="item"></td>
+                        <td><input type="number" class="price" placeholder="price" value="99"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="item" value="Bread" placeholder="item"></td>
+                        <td><input type="number" class="price" placeholder="price" value="99"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="item" value="Bread" placeholder="item"></td>
+                        <td><input type="number" class="price" placeholder="price" value="99"></td>
+                    </tr> -->
+                    <!--  -->
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="panel">
+        <div id="btn-cont">
+            <button id="add-item">Add Item</button>
+            <button id="total">Calculate Total</button>
+            <button for="file-input" id="upload-button">Set Logo</button>
+            <input type="file" accept="image/*" id="set-logo">
+            <button id="bg-toggle">Background</button>
+            <button id="download-button">Download as PDF</button>
+            
+        </div>
+
+    </div>
+
+    
+</body>
+
+</html>
