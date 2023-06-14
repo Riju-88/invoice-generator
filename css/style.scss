@@ -30,6 +30,25 @@
     resize: none;
     white-space: pre-wrap;
 }
+#date-lbl{
+    font-weight: 600;
+}
+#date{
+    border: none;
+    
+}
+#date::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Hide the calendar icon by default */
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  #date:focus::-webkit-calendar-picker-indicator {
+    opacity: 1; /* Display the calendar icon when the input is in focus */
+  }
+
+  #date:blur::-webkit-calendar-picker-indicator {
+    opacity: 0; /* Hide the calendar icon when the input loses focus */
+  }
 
 .blur-text {
     
@@ -196,14 +215,7 @@ input[type="number"] {
 
 }
 
-/* #upload-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-} */
+
 
 #set-logo {
     display: none;

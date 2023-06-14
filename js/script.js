@@ -61,12 +61,13 @@
         addItem.addEventListener("click", () => {
             let bill = document.querySelector("#bill");
             let tr = document.createElement("tr");
-            let td1 = document.createElement("td");
-            let td2 = document.createElement("td");
+            
             let itemBox = document.createElement("input");
             let itemWrap = document.createElement("td");
             let priceBox = document.createElement("input");
             let priceWrap = document.createElement("td");
+            // set tr class to .item-row
+            tr.setAttribute("class", "item-row");
             // set itemBox type to text
             itemBox.setAttribute("type", "text");
             // set priceBox type to number
@@ -87,6 +88,17 @@
             bill.appendChild(tr);
 
         });
+        // Remove item
+        const removeItem = document.querySelector("#remove-item");
+        removeItem.addEventListener("click", () => {
+            let bill = document.querySelector("#bill");
+        //   Remove last row
+    //    make sure the last child row has the class .item-row
+            if (bill.lastChild.classList.contains("item-row")) {
+                bill.removeChild(bill.lastChild);
+            }
+
+        })
 
         // calculate total
         const totalBtn = document.querySelector("#total");
@@ -124,7 +136,11 @@
             // append td to tr
             tr.append(td);
             bill.append(tr);
+            // disabling addItem removeItem and total after total is clicked
 
+            addItem.setAttribute("disabled","true");
+            removeItem.setAttribute("disabled","true");
+            totalBtn.setAttribute("disabled","true");
         })
 
         // download
